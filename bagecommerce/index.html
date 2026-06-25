@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>HamroBag RamroBag | Premium Bags Store</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+   <link rel="stylesheet" href="css/storefront.css">
+</head>
+<body>
+   <header class="site-header">
+      <nav class="nav-shell">
+         <a href="index.html" class="brand" aria-label="HamroBag RamroBag home">
+            <span class="brand-mark">HB</span>
+            <span>HamroBag</span>
+         </a>
+
+         <form class="search-form" role="search">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <input type="search" placeholder="Search backpacks, totes, laptop bags..." aria-label="Search products">
+         </form>
+
+         <div class="nav-actions">
+            <button class="icon-button menu-toggle" type="button" aria-label="Open menu">
+               <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="#featured" class="nav-link">Featured</a>
+            <a href="#categories" class="nav-link">Categories</a>
+            <a href="#reviews" class="nav-link">Reviews</a>
+            <button class="icon-button cart-button" type="button" aria-label="Shopping cart">
+               <i class="fa-solid fa-bag-shopping"></i>
+               <span class="cart-count">0</span>
+            </button>
+         </div>
+      </nav>
+
+      <div class="mobile-panel">
+         <a href="#featured">Featured Products</a>
+         <a href="#arrivals">New Arrivals</a>
+         <a href="#categories">Categories</a>
+         <a href="#reviews">Customer Reviews</a>
+      </div>
+   </header>
+
+   <main>
+      <section class="hero section-reveal">
+         <div class="hero-copy">
+            <span class="eyebrow">Summer travel edit</span>
+            <h1>Premium bags built for every journey.</h1>
+            <p>Discover modern backpacks, travel bags, totes, handbags, laptop carriers, and sports duffels crafted for comfort, durability, and everyday style.</p>
+            <div class="hero-actions">
+               <a href="#featured" class="btn primary-btn">Shop Collection</a>
+               <a href="#categories" class="btn ghost-btn">Explore Categories</a>
+            </div>
+            <div class="hero-stats" aria-label="Store highlights">
+               <span><strong>12+</strong> curated products</span>
+               <span><strong>35%</strong> launch offers</span>
+               <span><strong>4.8</strong> average rating</span>
+            </div>
+         </div>
+
+         <div class="hero-visual" aria-label="Featured bag promotion">
+            <div class="promo-card glass-card">
+               <span class="discount-pill">Up to 35% off</span>
+               <img src="uploaded_img/travels.jpg" alt="Premium travel backpack">
+               <div>
+                  <h2>Voyager Weekender</h2>
+                  <p>Lightweight, roomy, and ready for quick escapes.</p>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section class="promo-strip section-reveal" aria-label="Promotional benefits">
+         <div>
+            <i class="fa-solid fa-truck-fast"></i>
+            <span>Free delivery over NRs. 5,000</span>
+         </div>
+         <div>
+            <i class="fa-solid fa-shield-heart"></i>
+            <span>Quality checked materials</span>
+         </div>
+         <div>
+            <i class="fa-solid fa-rotate-left"></i>
+            <span>7 day easy exchange</span>
+         </div>
+      </section>
+
+      <section class="section-block section-reveal" id="categories">
+         <div class="section-heading">
+            <span class="eyebrow">Shop by need</span>
+            <h2>Categories</h2>
+            <p>Find the right carry for office, campus, travel, workouts, and polished everyday looks.</p>
+         </div>
+         <div class="category-grid">
+            <a href="#featured" class="category-card">
+               <img src="images/schoollbag.png" alt="Backpacks">
+               <span>Backpacks</span>
+            </a>
+            <a href="#featured" class="category-card">
+               <img src="images/travelbag.png" alt="Travel bags">
+               <span>Travel Bags</span>
+            </a>
+            <a href="#featured" class="category-card">
+               <img src="uploaded_img/stylish_and_modern_fashion_backpack_for_wom_3.jpg" alt="Tote bags">
+               <span>Tote Bags</span>
+            </a>
+            <a href="#featured" class="category-card">
+               <img src="images/laptopbag.png" alt="Laptop bags">
+               <span>Laptop Bags</span>
+            </a>
+            <a href="#featured" class="category-card">
+               <img src="uploaded_img/leather1.jpg" alt="Handbags">
+               <span>Handbags</span>
+            </a>
+            <a href="#featured" class="category-card">
+               <img src="uploaded_img/hik2.jpg" alt="Sports bags">
+               <span>Sports Bags</span>
+            </a>
+         </div>
+      </section>
+
+      <section class="section-block section-reveal" id="featured">
+         <div class="section-heading split-heading">
+            <div>
+               <span class="eyebrow">Best sellers</span>
+               <h2>Featured Products</h2>
+            </div>
+            <p>Realistic sample products with detailed specs, ratings, launch pricing, and premium placeholder imagery.</p>
+         </div>
+         <div class="product-grid" id="featuredProducts"></div>
+      </section>
+
+      <section class="collection-banner section-reveal" id="arrivals">
+         <div>
+            <span class="eyebrow">New arrivals</span>
+            <h2>Fresh styles for workdays, weekends, and flights.</h2>
+            <p>Clean silhouettes, padded tech pockets, smart organizers, water-resistant finishes, and polished textures.</p>
+         </div>
+         <a href="#newProducts" class="btn light-btn">View New Drops</a>
+      </section>
+
+      <section class="section-block section-reveal">
+         <div class="section-heading">
+            <span class="eyebrow">Just landed</span>
+            <h2>New Arrivals</h2>
+         </div>
+         <div class="product-grid compact-grid" id="newProducts"></div>
+      </section>
+
+      <section class="reviews section-reveal" id="reviews">
+         <div class="section-heading">
+            <span class="eyebrow">Loved by customers</span>
+            <h2>Customer Reviews</h2>
+         </div>
+         <div class="review-grid">
+            <article class="review-card glass-card">
+               <div class="stars" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+               </div>
+               <p>"The laptop bag feels premium and still has enough pockets for chargers, notebooks, and daily essentials."</p>
+               <h3>Riya Shrestha</h3>
+               <span>Office commuter</span>
+            </article>
+            <article class="review-card glass-card">
+               <div class="stars" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+               </div>
+               <p>"The weekender bag is light, structured, and perfect for short trips. The sample collection looks very real."</p>
+               <h3>Samir Gurung</h3>
+               <span>Frequent traveler</span>
+            </article>
+            <article class="review-card glass-card">
+               <div class="stars" aria-label="4 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+               </div>
+               <p>"Clean design, strong colors, and great product details. It feels like a proper modern bag store."</p>
+               <h3>Anisha Thapa</h3>
+               <span>Design student</span>
+            </article>
+         </div>
+      </section>
+
+      <section class="newsletter section-reveal">
+         <div>
+            <span class="eyebrow">Stay in the loop</span>
+            <h2>Get launch offers and new bag drops.</h2>
+            <p>Subscribe for curated picks, seasonal discounts, and styling ideas.</p>
+         </div>
+         <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" aria-label="Email address" required>
+            <button class="btn primary-btn" type="submit">Subscribe</button>
+         </form>
+      </section>
+   </main>
+
+   <footer class="store-footer">
+      <div>
+         <a href="index.html" class="brand">
+            <span class="brand-mark">HB</span>
+            <span>HamroBag</span>
+         </a>
+         <p>Premium sample bag store built to run locally with HTML, CSS, and JavaScript.</p>
+      </div>
+      <div>
+         <h3>Shop</h3>
+         <a href="#featured">Featured</a>
+         <a href="#arrivals">New Arrivals</a>
+         <a href="#categories">Categories</a>
+      </div>
+      <div>
+         <h3>Support</h3>
+         <a href="#">Delivery Info</a>
+         <a href="#">Returns</a>
+         <a href="#">Size Guide</a>
+      </div>
+      <div>
+         <h3>Follow</h3>
+         <a href="#">Instagram</a>
+         <a href="#">Facebook</a>
+         <a href="#">TikTok</a>
+      </div>
+   </footer>
+
+   <script src="js/storefront.js"></script>
+</body>
+</html>
