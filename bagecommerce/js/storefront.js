@@ -4,7 +4,7 @@ const products = [
       category: "Backpack",
       image: "uploaded_img/img1.jpg",
       price: 3490,
-      oldPrice: 4290,
+      oldPrice: 3290,
       discount: "19% OFF",
       rating: 4.8,
       details: "Water-resistant shell, padded back panel, bottle pocket, and 22L storage."
@@ -14,7 +14,7 @@ const products = [
       category: "Travel Bag",
       image: "uploaded_img/travels.jpg",
       price: 5990,
-      oldPrice: 7290,
+      oldPrice: 3290,
       discount: "18% OFF",
       rating: 4.9,
       details: "Cabin-friendly weekender with shoe pocket, trolley sleeve, and wide opening."
@@ -24,7 +24,7 @@ const products = [
       category: "Tote Bag",
       image: "uploaded_img/stylish_and_modern_fashion_backpack_for_wom_3.jpg",
       price: 2890,
-      oldPrice: 3590,
+      oldPrice: 2590,
       discount: "20% OFF",
       rating: 4.7,
       details: "Minimal tote with zip closure, inner organizer, and vegan leather accents."
@@ -33,8 +33,8 @@ const products = [
       name: "Axis 15 Laptop Carrier",
       category: "Laptop Bag",
       image: "uploaded_img/lap1.jpg",
-      price: 4590,
-      oldPrice: 5490,
+      price: 1590,
+      oldPrice: 2490,
       discount: "16% OFF",
       rating: 4.8,
       details: "Padded 15.6 inch laptop section, charger pockets, and slim office profile."
@@ -44,7 +44,7 @@ const products = [
       category: "Handbag",
       image: "uploaded_img/leather1.jpg",
       price: 3790,
-      oldPrice: 4690,
+      oldPrice: 1690,
       discount: "19% OFF",
       rating: 4.6,
       details: "Structured silhouette with premium texture, detachable strap, and metal feet."
@@ -53,8 +53,8 @@ const products = [
       name: "Pulse Gym Duffel",
       category: "Sports Bag",
       image: "uploaded_img/hik2.jpg",
-      price: 3290,
-      oldPrice: 3990,
+      price: 2290,
+      oldPrice: 3000,
       discount: "18% OFF",
       rating: 4.7,
       details: "Lightweight duffel with ventilated compartment and quick-access side pockets."
