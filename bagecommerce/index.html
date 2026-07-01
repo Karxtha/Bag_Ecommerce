@@ -8,7 +8,7 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-   <link rel="stylesheet" href="css/storefront.css">
+   <link rel="stylesheet" href="css/storefront.css?v=2">
 </head>
 <body>
    <header class="site-header">
@@ -18,19 +18,19 @@
             <span>HamroBag</span>
          </a>
 
-         <form class="search-form" role="search">
+         <form class="search-form" role="search" onsubmit="handleSearch(event)">
             <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-            <input type="search" placeholder="Search backpacks, totes, laptop bags..." aria-label="Search products">
+            <input id="productSearch" type="search" placeholder="Search backpacks, totes, laptop bags..." aria-label="Search products" oninput="handleSearch(event)">
          </form>
 
          <div class="nav-actions">
-            <button class="icon-button menu-toggle" type="button" aria-label="Open menu">
+            <button class="icon-button menu-toggle" type="button" aria-label="Open menu" onclick="toggleMobileMenu()">
                <i class="fa-solid fa-bars"></i>
             </button>
-            <a href="#featured" class="nav-link">Featured</a>
-            <a href="#categories" class="nav-link">Categories</a>
-            <a href="#reviews" class="nav-link">Reviews</a>
-            <button class="icon-button cart-button" type="button" aria-label="Shopping cart">
+            <a href="#featured" class="nav-link" onclick="showAllProducts()">Featured</a>
+            <a href="#categories" class="nav-link" onclick="scrollToSection('categories')">Categories</a>
+            <a href="#reviews" class="nav-link" onclick="scrollToSection('reviews')">Reviews</a>
+            <button class="icon-button cart-button" type="button" aria-label="Shopping cart" onclick="toggleCart()">
                <i class="fa-solid fa-bag-shopping"></i>
                <span class="cart-count">0</span>
             </button>
@@ -38,10 +38,10 @@
       </nav>
 
       <div class="mobile-panel">
-         <a href="#featured">Featured Products</a>
-         <a href="#arrivals">New Arrivals</a>
-         <a href="#categories">Categories</a>
-         <a href="#reviews">Customer Reviews</a>
+         <a href="#featured" onclick="closeMobileMenu(); showAllProducts();">Featured Products</a>
+         <a href="#arrivals" onclick="closeMobileMenu()">New Arrivals</a>
+         <a href="#categories" onclick="closeMobileMenu()">Categories</a>
+         <a href="#reviews" onclick="closeMobileMenu()">Customer Reviews</a>
       </div>
    </header>
 
@@ -52,8 +52,8 @@
             <h1>Premium bags built for every journey.</h1>
             <p>Discover modern backpacks, travel bags, totes, handbags, laptop carriers, and sports duffels crafted for comfort, durability, and everyday style.</p>
             <div class="hero-actions">
-               <a href="#featured" class="btn primary-btn">Shop Collection</a>
-               <a href="#categories" class="btn ghost-btn">Explore Categories</a>
+               <a href="#featured" class="btn primary-btn" onclick="showAllProducts()">Shop Collection</a>
+               <a href="#categories" class="btn ghost-btn" onclick="scrollToSection('categories')">Explore Categories</a>
             </div>
             <div class="hero-stats" aria-label="Store highlights">
                <span><strong>12+</strong> curated products</span>
@@ -96,27 +96,27 @@
             <p>Find the right carry for office, campus, travel, workouts, and polished everyday looks.</p>
          </div>
          <div class="category-grid">
-            <a href="#featured" class="category-card">
+            <a href="#featured" class="category-card" onclick="filterByCategory('Backpack', this)">
                <img src="images/schoollbag.png" alt="Backpacks">
                <span>Backpacks</span>
             </a>
-            <a href="#featured" class="category-card">
+            <a href="#featured" class="category-card" onclick="filterByCategory('Travel Bag', this)">
                <img src="images/travelbag.png" alt="Travel bags">
                <span>Travel Bags</span>
             </a>
-            <a href="#featured" class="category-card">
+            <a href="#featured" class="category-card" onclick="filterByCategory('Tote Bag', this)">
                <img src="uploaded_img/stylish_and_modern_fashion_backpack_for_wom_3.jpg" alt="Tote bags">
                <span>Tote Bags</span>
             </a>
-            <a href="#featured" class="category-card">
+            <a href="#featured" class="category-card" onclick="filterByCategory('Laptop Bag', this)">
                <img src="images/laptopbag.png" alt="Laptop bags">
                <span>Laptop Bags</span>
             </a>
-            <a href="#featured" class="category-card">
+            <a href="#featured" class="category-card" onclick="filterByCategory('Handbag', this)">
                <img src="uploaded_img/leather1.jpg" alt="Handbags">
                <span>Handbags</span>
             </a>
-            <a href="#featured" class="category-card">
+            <a href="#featured" class="category-card" onclick="filterByCategory('Sports Bag', this)">
                <img src="uploaded_img/hik2.jpg" alt="Sports bags">
                <span>Sports Bags</span>
             </a>
@@ -140,7 +140,7 @@
             <h2>Fresh styles for workdays, weekends, and flights.</h2>
             <p>Clean silhouettes, padded tech pockets, smart organizers, water-resistant finishes, and polished textures.</p>
          </div>
-         <a href="#newProducts" class="btn light-btn">View New Drops</a>
+            <a href="#newProducts" class="btn light-btn" onclick="scrollToSection('newProducts')">View New Drops</a>
       </section>
 
       <section class="section-block section-reveal">
@@ -202,12 +202,36 @@
             <h2>Get launch offers and new bag drops.</h2>
             <p>Subscribe for curated picks, seasonal discounts, and styling ideas.</p>
          </div>
-         <form class="newsletter-form">
+         <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
             <input type="email" placeholder="Enter your email" aria-label="Email address" required>
             <button class="btn primary-btn" type="submit">Subscribe</button>
          </form>
       </section>
    </main>
+
+   <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart drawer">
+      <div class="cart-header">
+         <div>
+            <span class="eyebrow">Your cart</span>
+            <h2>Selected Bags</h2>
+         </div>
+         <button class="icon-button" type="button" aria-label="Close cart" onclick="toggleCart(false)">
+            <i class="fa-solid fa-xmark"></i>
+         </button>
+      </div>
+      <div class="cart-items" id="cartItems">
+         <p class="empty-cart">Your cart is empty. Add a bag to get started.</p>
+      </div>
+      <div class="cart-footer">
+         <div>
+            <span>Total</span>
+            <strong id="cartTotal">NRs. 0</strong>
+         </div>
+         <button class="btn primary-btn" type="button" onclick="checkoutCart()">Checkout</button>
+      </div>
+   </aside>
+   <div class="cart-overlay" id="cartOverlay" onclick="toggleCart(false)"></div>
+   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
    <footer class="store-footer">
       <div>
@@ -237,6 +261,6 @@
       </div>
    </footer>
 
-   <script src="js/storefront.js"></script>
+   <script src="js/storefront.js?v=2"></script>
 </body>
 </html>
